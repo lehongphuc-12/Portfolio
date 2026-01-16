@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code2 } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Code2 } from "lucide-react";
 
-const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Contact', href: '#contact' },
-];
+import { NAV_ITEMS, PROFILE } from "../constants";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,39 +12,41 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen ? 'py-4' : 'py-6'
+        isScrolled || isMobileMenuOpen ? "py-4" : "py-6"
       }`}
     >
       <div className="container mx-auto px-6">
         <div
           className={`
             relative flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300
-            ${isScrolled || isMobileMenuOpen 
-              ? 'bg-slate-950/70 backdrop-blur-md border border-white/10 shadow-lg' 
-              : 'bg-transparent border-transparent'
+            ${
+              isScrolled || isMobileMenuOpen
+                ? "bg-slate-950/70 backdrop-blur-md border border-white/10 shadow-lg"
+                : "bg-transparent border-transparent"
             }
           `}
         >
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="p-2 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg group-hover:scale-110 transition-transform duration-300">
+            <div className="p-2 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-lg group-hover:rotate-12 transition-transform duration-300">
               <Code2 size={20} className="text-white" />
             </div>
-            <span className="font-mono font-bold text-lg tracking-tight text-white">
-              DEV<span className="text-cyan-400">.IO</span>
+            <span className="font-mono font-bold text-lg tracking-tight text-white uppercase">
+              {PROFILE.name.split(" ")[0]}
+              <span className="text-cyan-400">.DEV</span>
             </span>
           </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {NAV_ITEMS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -81,7 +78,7 @@ export const Navbar: React.FC = () => {
             className="absolute top-20 left-0 w-full px-6 md:hidden"
           >
             <div className="bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col gap-4 shadow-2xl">
-              {navLinks.map((link) => (
+              {NAV_ITEMS.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}

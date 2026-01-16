@@ -1,33 +1,33 @@
 import { LucideIcon } from "lucide-react";
 
 export interface Project {
-  id: number;
+  id: string | number;
+  slug: string;
   title: string;
   description: string;
   image: string;
   tags: string[];
   github?: string;
   demo?: string;
+  featured?: boolean;
+  projectType: "team" | "personal";
 }
 
 export interface Experience {
-  id: number;
+  id: string | number;
   role: string;
   company: string;
+  location?: string;
   period: string;
-  description: string;
+  achievements: string[];
+  techStack?: string[];
 }
 
-export interface SkillItem {
+export interface Skill {
   name: string;
-  level: string; // e.g., "Advanced"
-  icon?: LucideIcon;
-}
-
-export interface SkillCategory {
-  title: string;
-  skills: string[];
-  span: number; // For Bento grid layout (col-span)
+  icon: LucideIcon;
+  category: "frontend" | "backend" | "tools" | "other";
+  level?: number; // 0-100 for progress bars if needed
 }
 
 export interface NavItem {
@@ -35,14 +35,35 @@ export interface NavItem {
   href: string;
 }
 
-export interface Skill {
-  name: string;
-  icon: LucideIcon;
-  category: string;
-}
-
 export interface SocialLink {
   platform: string;
   url: string;
   icon: LucideIcon;
+}
+
+export interface Profile {
+  name: string;
+  title: string;
+  bio: string;
+  email: string;
+  phone?: string;
+  location?: string;
+  resumeUrl?: string;
+  github?: string;
+  linkedin?: string;
+  avatar?: string;
+  yearsOfExperience?: number;
+}
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  description?: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  year?: string;
+  credentialId?: string;
 }

@@ -58,11 +58,13 @@ const Projects: React.FC = () => {
             pagination={{ clickable: true }}
             navigation={true}
             loop={true}
-            speed={1000}
+            speed={1200}
             autoplay={{
-              delay: 2000,
+              delay: 3000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
+            loopAdditionalSlides={3}
             modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
             className="w-full py-12"
             breakpoints={{
@@ -80,9 +82,9 @@ const Projects: React.FC = () => {
               },
             }}
           >
-            {PROJECTS.map((project) => (
+            {[...PROJECTS, ...PROJECTS].map((project, index) => (
               <SwiperSlide
-                key={project.id}
+                key={`${project.id}-${index}`}
                 className="w-[300px] sm:w-[350px] md:w-[400px]"
               >
                 <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 shadow-2xl h-full flex flex-col">
@@ -119,9 +121,20 @@ const Projects: React.FC = () => {
 
                   {/* Content Area */}
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {project.title}
-                    </h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold text-white">
+                        {project.title}
+                      </h3>
+                      <span
+                        className={`text-[10px] font-mono px-2 py-1 rounded-full ${
+                          project.projectType === "team"
+                            ? "bg-indigo-500/20 text-indigo-300 border border-indigo-500/30"
+                            : "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                        }`}
+                      >
+                        {project.projectType === "team" ? "TEAM" : "PERSONAL"}
+                      </span>
+                    </div>
                     <div className="bg-slate-900/50 p-3 rounded mb-4 text-sm text-slate-400 flex-1">
                       {project.description}
                     </div>
