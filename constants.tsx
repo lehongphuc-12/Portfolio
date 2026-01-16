@@ -31,8 +31,8 @@ export const PROFILE: Profile = {
   email: "phucle682004@gmail.com",
   phone: "+84 0788580223",
   location: "DaNang, Vietnam",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  github: "https://github.com/lehongphuc-12",
+  linkedin: "https://linkedin.com/in/lehongphuc-12",
   resumeUrl: "/resume.pdf", // Update this path with your actual resume file
   yearsOfExperience: 3,
 };
