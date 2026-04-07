@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
               <Code2 size={20} className="text-white" />
             </div>
             <span className="font-mono font-bold text-lg tracking-tight text-white uppercase">
-              {PROFILE.name.split(" ")[0]}
+              {PROFILE.fullname.split(" ")[0]}
               <span className="text-cyan-400">.DEV</span>
             </span>
           </a>

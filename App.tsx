@@ -39,7 +39,7 @@ function App() {
             {/* Brand */}
             <div>
               <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 mb-4">
-                {PROFILE.name.split(" ")[0]}.DEV
+                {PROFILE.fullname.split(" ")[0]}.DEV
               </h3>
               <p className="text-slate-400 text-sm max-w-xs">{PROFILE.bio}</p>
             </div>
@@ -79,7 +79,7 @@ function App() {
 
           <div className="pt-8 border-t border-white/5 text-center">
             <p className="text-slate-500 text-sm">
-              © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
+              © {new Date().getFullYear()} {PROFILE.fullname}. All rights reserved.
             </p>
             <p className="text-slate-600 text-xs mt-2">
               Built with <span className="text-cyan-400">React</span> &{" "}

@@ -100,12 +100,14 @@ export const Skills: React.FC = () => {
             {CERTIFICATIONS.map((cert) => (
               <div
                 key={cert.name}
-                className="flex items-center gap-2 text-sm text-slate-400"
+                className="flex items-start gap-3 text-sm text-slate-400"
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
                 <div className="flex-1">
-                  <div className="text-slate-300">{cert.name}</div>
-                  <div className="text-xs text-slate-500">
+                  <div className="text-slate-300 leading-tight mb-1">
+                    {cert.name}
+                  </div>
+                  <div className="text-[11px] text-slate-500 font-mono">
                     {cert.issuer} • {cert.year}
                   </div>
                 </div>
@@ -146,9 +148,9 @@ export const Skills: React.FC = () => {
               otherSkills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="flex items-center gap-2 text-sm text-slate-300"
+                  className="flex items-start gap-2 text-sm text-slate-300"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 shrink-0" />
                   {skill.name}
                 </div>
               ))

@@ -42,7 +42,8 @@ export interface SocialLink {
 }
 
 export interface Profile {
-  name: string;
+  nickname: string;
+  fullname: string;
   title: string;
   bio: string;
   email: string;

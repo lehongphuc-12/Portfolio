@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { Briefcase, GraduationCap } from "lucide-react";
-import { EXPERIENCE, PROFILE, EDUCATION } from "../constants";
+import { EXPERIENCE, PROFILE, EDUCATION, PROJECTS } from "../constants";
 
 export const About: React.FC = () => {
   return (
@@ -24,12 +24,14 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-cyan-400/30 transition-colors duration-300">
               <h4 className="text-3xl font-bold text-indigo-400">
-                {PROFILE.yearsOfExperience || 5}+
+                {PROFILE.yearsOfExperience || 0}+
               </h4>
               <p className="text-sm text-slate-500 mt-1">Years of Experience</p>
             </div>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-cyan-400/30 transition-colors duration-300">
-              <h4 className="text-3xl font-bold text-cyan-400">20+</h4>
+              <h4 className="text-3xl font-bold text-cyan-400">
+                {PROJECTS.length}+
+              </h4>
               <p className="text-sm text-slate-500 mt-1">Projects Completed</p>
             </div>
           </div>

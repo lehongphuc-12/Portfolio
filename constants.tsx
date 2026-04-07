@@ -25,16 +25,17 @@ import {
 } from "./types";
 
 export const PROFILE: Profile = {
-  name: "Akasaki Lee",
+  nickname: "Akasaki Lee",
+  fullname: "Le_Hong_Phuc",
   title: "Full Stack Developer & UI/UX Enthusiast",
   bio: "I build high-performance, beautiful web applications with a focus on user experience and scalable architecture. Passionate about AI integration and modern frontend technologies.",
-  email: "phucle682004@gmail.com",
+  email: "[EMAIL_ADDRESS]",
   phone: "+84 0788580223",
   location: "DaNang, Vietnam",
   github: "https://github.com/lehongphuc-12",
   linkedin: "https://linkedin.com/in/lehongphuc-12",
   resumeUrl: "./Img/CV%20-%20Le%20Hong%20Phuc.pdf",
-  yearsOfExperience: 3,
+  yearsOfExperience: 0,
 };
 
 export const EDUCATION: Education[] = [
@@ -47,19 +48,14 @@ export const EDUCATION: Education[] = [
 
 export const CERTIFICATIONS: Certification[] = [
   {
-    name: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
-    year: "2023",
+    name: "Web Design for Everybody: Basics of Web Development & Coding",
+    issuer: "University of Michigan",
+    year: "2024",
   },
   {
-    name: "Microsoft Azure Fundamentals",
-    issuer: "Microsoft",
-    year: "2023",
-  },
-  {
-    name: "Oracle Java SE Programmer",
-    issuer: "Oracle",
-    year: "2022",
+    name: "Software Development Lifecycle",
+    issuer: "University of Minnesota",
+    year: "2025",
   },
 ];
 
@@ -187,46 +183,44 @@ export const SKILLS: Skill[] = [
   // Frontend
   { name: "React", icon: Code2, category: "frontend", level: 85 },
   { name: "TypeScript", icon: Terminal, category: "frontend", level: 80 },
-  { name: "Tailwind CSS", icon: Layout, category: "frontend", level: 90 },
+  { name: "Tailwind CSS", icon: Layout, category: "frontend", level: 60 },
   { name: "HTML/CSS", icon: Layout, category: "frontend", level: 95 },
-  { name: "JavaScript", icon: Code2, category: "frontend", level: 85 },
-  { name: "Bootstrap", icon: Layout, category: "frontend", level: 85 },
+  { name: "JavaScript", icon: Code2, category: "frontend", level: 75 },
+  { name: "Bootstrap", icon: Layout, category: "frontend", level: 75 },
   {
     name: "Responsive Design",
     icon: Smartphone,
     category: "frontend",
-    level: 90,
+    level: 75,
   },
 
   // Backend
-  { name: ".NET", icon: Code2, category: "backend", level: 85 },
-  { name: "C#", icon: Code2, category: "backend", level: 85 },
-  { name: "Java", icon: Code2, category: "backend", level: 85 },
+  { name: ".NET", icon: Code2, category: "backend", level: 80 },
+  { name: "C#", icon: Code2, category: "backend", level: 80 },
+  { name: "Java", icon: Code2, category: "backend", level: 80 },
   { name: "Spring Boot", icon: Server, category: "backend", level: 75 },
-  { name: "SQL Server", icon: Database, category: "backend", level: 70 },
-  { name: "Entity Framework", icon: Database, category: "backend", level: 75 },
+  { name: "SQL Server", icon: Database, category: "backend", level: 85 },
+  { name: "Entity Framework", icon: Database, category: "backend", level: 80 },
   { name: "RESTful API", icon: Server, category: "backend", level: 80 },
 
   // Tools & DevOps
   { name: "Git", icon: Terminal, category: "tools", level: 85 },
   { name: "Github", icon: Github, category: "tools", level: 85 },
   { name: "Docker", icon: Cpu, category: "tools", level: 60 },
-  { name: "Figma", icon: Figma, category: "tools", level: 75 },
   { name: "VS Code", icon: Code2, category: "tools", level: 90 },
   { name: "Postman", icon: Terminal, category: "tools", level: 85 },
   { name: "Swagger", icon: Code2, category: "tools", level: 80 },
-  { name: "Azure", icon: Cpu, category: "tools", level: 65 },
+  { name: "Azure", icon: Cpu, category: "tools", level: 50 },
 
   // Specialized & Others
   { name: "Clean Code", icon: Code2, category: "other", level: 85 },
   { name: "MVC Pattern", icon: Layout, category: "other", level: 80 },
   { name: "Design Patterns", icon: Code2, category: "other", level: 75 },
-  { name: "Microservices", icon: Server, category: "other", level: 70 },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { platform: "GitHub", url: "https://github.com", icon: Github },
   { platform: "LinkedIn", url: "https://linkedin.com", icon: Linkedin },
   { platform: "Twitter", url: "https://twitter.com", icon: Twitter },
-  { platform: "Email", url: "mailto:phucle.dev@gmail.com", icon: Mail },
+  { platform: "Email", url: "mailto:[EMAIL_ADDRESS]", icon: Mail },
 ];
