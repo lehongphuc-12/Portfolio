@@ -11,17 +11,43 @@ export const Contact: React.FC = () => {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate network request
-    setTimeout(() => {
+    setStatus("idle");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "a33ac19c-0e20-4411-a7ee-28d5139310e9",
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          subject: `New Contact from ${formState.name} Portfolio`,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success");
+        setFormState({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    } finally {
       setIsSubmitting(false);
-      alert("Message sent! (Simulation)");
-      setFormState({ name: "", email: "", message: "" });
-    }, 1500);
+    }
   };
 
   return (
@@ -149,16 +175,34 @@ export const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className={`w-full py-4 font-bold rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed ${
+                status === "success"
+                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                  : "bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white"
+              }`}
             >
               {isSubmitting ? (
                 "Sending..."
+              ) : status === "success" ? (
+                "Message Sent Successfully!"
               ) : (
                 <>
                   Send Message <Send size={18} />
                 </>
               )}
             </button>
+
+            {status === "error" && (
+              <p className="text-red-400 text-sm text-center">
+                Something went wrong. Please try again or email me directly.
+              </p>
+            )}
+            
+            {status === "success" && (
+              <p className="text-green-400 text-sm text-center">
+                Thanks! I'll get back to you as soon as possible.
+              </p>
+            )}
           </form>
         </GlassCard>
       </div>
