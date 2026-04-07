@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { PROFILE, SOCIAL_LINKS } from "../constants";
+import { ResumeModal } from "./ui/ResumeModal";
 
 export const Hero: React.FC = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Mesh Gradient Background */}
+      {/* ... mesh gradient and grid ... */}
       <div className="absolute inset-0 w-full h-full bg-slate-950">
         <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
         <div className="absolute top-0 -right-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
 
-        {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       </div>
 
@@ -63,14 +65,12 @@ export const Hero: React.FC = () => {
               </a>
 
               {PROFILE.resumeUrl && (
-                <a
-                  href={PROFILE.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setIsResumeOpen(true)}
                   className="px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-white font-medium flex items-center gap-2"
                 >
                   <Download size={18} /> Download CV
-                </a>
+                </button>
               )}
             </div>
 
@@ -127,6 +127,11 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
       </div>
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+        resumeUrl={PROFILE.resumeUrl}
+      />
     </section>
   );
 };

@@ -33,7 +33,7 @@ export const PROFILE: Profile = {
   location: "DaNang, Vietnam",
   github: "https://github.com/lehongphuc-12",
   linkedin: "https://linkedin.com/in/lehongphuc-12",
-  resumeUrl: "/resume.pdf", // Update this path with your actual resume file
+  resumeUrl: "./Img/CV%20-%20Le%20Hong%20Phuc.pdf",
   yearsOfExperience: 3,
 };
 
