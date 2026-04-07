@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
             centeredSlides={true}
             slidesPerView={"auto"}
             coverflowEffect={{
-              rotate: 50,
+              rotate: 30,
               stretch: 0,
               depth: 100,
               modifier: 1,
@@ -57,34 +57,38 @@ const Projects: React.FC = () => {
             }}
             pagination={{ clickable: true }}
             navigation={true}
-            loop={true}
-            speed={1200}
+            loop={PROJECTS.length > 0}
+            loopedSlides={6}
+            speed={800}
             autoplay={{
-              delay: 3000,
+              delay: 3500,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            loopAdditionalSlides={3}
             modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
             className="w-full py-12"
             breakpoints={{
-              640: {
-                slidesPerView: 1,
+              320: {
+                slidesPerView: 1.2,
                 spaceBetween: 20,
               },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 40,
+              640: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 2.2,
                 spaceBetween: 50,
+              },
+              1280: {
+                slidesPerView: 3,
+                spaceBetween: 60,
               },
             }}
           >
-            {[...PROJECTS, ...PROJECTS].map((project, index) => (
+            {[...PROJECTS, ...PROJECTS, ...PROJECTS].map((project, index) => (
               <SwiperSlide
-                key={`${project.id}-${index}`}
+                key={`${project.id}-copy-${index}`}
                 className="w-[300px] sm:w-[350px] md:w-[400px]"
               >
                 <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 shadow-2xl h-full flex flex-col">
