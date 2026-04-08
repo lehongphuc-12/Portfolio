@@ -35,7 +35,7 @@ export const PROFILE: Profile = {
   location: "DaNang, Vietnam",
   github: "https://github.com/lehongphuc-12",
   linkedin: "https://linkedin.com/in/lehongphuc-12",
-  resumeUrl: "./Img/CV.pdf",
+  resumeUrl: "/Img/CV.pdf",
   yearsOfExperience: 0,
 };
 
@@ -114,7 +114,7 @@ export const PROJECTS: Project[] = [
     title: "Pet Spa Management System",
     description:
       "A comprehensive ASP.NET MVC web application for pet spa clinics, featuring appointment booking, service management, e-commerce for pet products, and administrative dashboards for staff and user management.",
-    image: "./Img/pet-spa-system.png",
+    image: "/Img/pet-spa-system.png",
     tags: [
       "C#",
       ".NET 9",
@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
     title: "Flower Shop E-commerce",
     description:
       "A full-stack e-commerce application for an online flower shop, featuring a modern React/Vite frontend and a Spring Boot backend. Includes product categorization, search, shopping cart management, Google authentication, and Cloudinary for image management.",
-    image: "./Img/flowerconner.png",
+    image: "/Img/flowerconner.png",
     tags: [
       "Java",
       "Spring Boot",
@@ -161,7 +161,7 @@ export const PROJECTS: Project[] = [
     title: "Project Information Management System (PIMS)",
     description:
       "A comprehensive course project (SWP391) management system featuring student group management, defense scheduling and grading, semester administration, and a complex role-based access control system (Admin, Student, Lecturer).",
-    image: "./Img/pims.png",
+    image: "/Img/pims.png",
     tags: [
       "C#",
       ".NET 9",
