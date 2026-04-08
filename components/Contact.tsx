@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SectionWrapper } from "./ui/SectionWrapper";
 import { GlassCard } from "./ui/GlassCard";
-import { Send, Mail, MapPin } from "lucide-react";
+import { Send, Mail, MapPin, Phone } from "lucide-react";
 
 import { PROFILE } from "../constants";
 
@@ -94,7 +94,7 @@ export const Contact: React.FC = () => {
             {PROFILE.phone && (
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-green-400 group-hover:border-green-400/50 transition-colors">
-                  <Mail size={20} />
+                  <Phone size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-mono">Phone</p>
@@ -197,7 +197,7 @@ export const Contact: React.FC = () => {
                 Something went wrong. Please try again or email me directly.
               </p>
             )}
-            
+
             {status === "success" && (
               <p className="text-green-400 text-sm text-center">
                 Thanks! I'll get back to you as soon as possible.

@@ -11,6 +11,7 @@ import {
   Twitter,
   Figma,
   Smartphone,
+  Facebook,
   Mail,
 } from "lucide-react";
 import {
@@ -29,12 +30,12 @@ export const PROFILE: Profile = {
   fullname: "Le_Hong_Phuc",
   title: "Full Stack Developer & UI/UX Enthusiast",
   bio: "I build high-performance, beautiful web applications with a focus on user experience and scalable architecture. Passionate about AI integration and modern frontend technologies.",
-  email: "[EMAIL_ADDRESS]",
+  email: "phucle682004@gmail.com",
   phone: "+84 0788580223",
   location: "DaNang, Vietnam",
   github: "https://github.com/lehongphuc-12",
   linkedin: "https://linkedin.com/in/lehongphuc-12",
-  resumeUrl: "./Img/CV%20-%20Le%20Hong%20Phuc.pdf",
+  resumeUrl: "./Img/CV.pdf",
   yearsOfExperience: 0,
 };
 
@@ -148,7 +149,7 @@ export const PROJECTS: Project[] = [
       "JWT",
       "Cloudinary",
     ],
-    github: "https://github.com",
+    github: "https://github.com/lehongphuc-12/flowerShopFE.git",
     demo: "https://flowershop-iota.vercel.app/",
     featured: true,
     projectType: "team",
@@ -197,8 +198,8 @@ export const SKILLS: Skill[] = [
   // Backend
   { name: ".NET", icon: Code2, category: "backend", level: 80 },
   { name: "C#", icon: Code2, category: "backend", level: 80 },
-  { name: "Java", icon: Code2, category: "backend", level: 80 },
-  { name: "Spring Boot", icon: Server, category: "backend", level: 75 },
+  { name: "Java", icon: Code2, category: "backend", level: 70 },
+  { name: "Spring Boot", icon: Server, category: "backend", level: 60 },
   { name: "SQL Server", icon: Database, category: "backend", level: 85 },
   { name: "Entity Framework", icon: Database, category: "backend", level: 80 },
   { name: "RESTful API", icon: Server, category: "backend", level: 80 },
@@ -206,21 +207,24 @@ export const SKILLS: Skill[] = [
   // Tools & DevOps
   { name: "Git", icon: Terminal, category: "tools", level: 85 },
   { name: "Github", icon: Github, category: "tools", level: 85 },
-  { name: "Docker", icon: Cpu, category: "tools", level: 60 },
   { name: "VS Code", icon: Code2, category: "tools", level: 90 },
   { name: "Postman", icon: Terminal, category: "tools", level: 85 },
   { name: "Swagger", icon: Code2, category: "tools", level: 80 },
-  { name: "Azure", icon: Cpu, category: "tools", level: 50 },
 
   // Specialized & Others
   { name: "Clean Code", icon: Code2, category: "other", level: 85 },
   { name: "MVC Pattern", icon: Layout, category: "other", level: 80 },
   { name: "Design Patterns", icon: Code2, category: "other", level: 75 },
+  { name: "Architecture Layer", icon: Layout, category: "other", level: 70 },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { platform: "GitHub", url: "https://github.com", icon: Github },
-  { platform: "LinkedIn", url: "https://linkedin.com", icon: Linkedin },
-  { platform: "Twitter", url: "https://twitter.com", icon: Twitter },
-  { platform: "Email", url: "mailto:[EMAIL_ADDRESS]", icon: Mail },
+  { platform: "GitHub", url: "https://github.com/lehongphuc-12", icon: Github },
+
+  {
+    platform: "Facebook",
+    url: "https://www.facebook.com/le.hongphuc.520125",
+    icon: Facebook,
+  },
+  { platform: "Email", url: "mailto:phucle682004@gmai.com", icon: Mail },
 ];
