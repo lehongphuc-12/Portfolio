@@ -28,8 +28,8 @@ import {
 export const PROFILE: Profile = {
   nickname: "Akasaki Lee",
   fullname: "Le_Hong_Phuc",
-  title: "Full Stack Developer & UI/UX Enthusiast",
-  bio: "I build high-performance, beautiful web applications with a focus on user experience and scalable architecture. Passionate about AI integration and modern frontend technologies.",
+  title: "Full Stack Developer | Backend-Focused",
+  bio: "I'm a Full Stack Developer with a strong focus on backend engineering. I specialize in building robust, scalable server-side systems with .NET and Spring Boot, while also delivering clean, responsive frontends with React and TypeScript.",
   email: "phucle682004@gmail.com",
   phone: "+84 0788580223",
   location: "DaNang, Vietnam",

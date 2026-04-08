@@ -15,11 +15,11 @@ export const About: React.FC = () => {
           <p className="text-slate-400 leading-relaxed text-lg">
             {PROFILE.bio}
           </p>
-          <p className="text-slate-400 leading-relaxed text-lg">
+          {/* <p className="text-slate-400 leading-relaxed text-lg">
             When I'm not coding, you can find me exploring 3D modeling,
             contributing to open-source, or seeking inspiration in modern
             architecture.
-          </p>
+          </p> */}
 
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-cyan-400/30 transition-colors duration-300">
